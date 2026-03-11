@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Primary Meta Tags -->
+  <!-- TODO: Replace with your paper title and author names -->
+  <meta name="title" content="ATOM: A Framework of Detecting Query-Based Model Extraction Attacks for Graph Neural Networks - Zhan Cheng, Bolin Shen, Tianming Sha, Yuan Gao, Shibo Li, Yushun Dong">
+  <!-- TODO: Write a compelling 150-160 character description of your research -->
+  <meta name="description" content="ATOM is a novel real-time model extraction attack detection framework tailored for Graph Neural Networks integrating sequential modeling and reinforcement learning.">
+  <!-- TODO: Add 5-10 relevant keywords for your research area -->
+  <meta name="keywords" content="Graph Neural Networks, Model Extraction Attacks, Reinforcement Learning, Security, Machine Learning, machine learning, computer vision, AI">
+  <!-- TODO: List all authors -->
+  <meta name="author" content="Zhan Cheng, Bolin Shen, Tianming Sha, Yuan Gao, Shibo Li, Yushun Dong">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <!-- TODO: Replace with your institution or lab name -->
+  <meta property="og:site_name" content="University of Wisconsin, Madison; Florida State University; Arizona State University">
+  <!-- TODO: Same as paper title above -->
+  <meta property="og:title" content="ATOM: A Framework of Detecting Query-Based Model Extraction Attacks for Graph Neural Networks">
+  <!-- TODO: Same as description above -->
+  <meta property="og:description" content="ATOM is a novel real-time model extraction attack detection framework tailored for Graph Neural Networks integrating sequential modeling and reinforcement learning.">
+  <!-- TODO: Replace with your actual website URL -->
+  <meta property="og:url" content="https://github.com/LabRAI/ATOM">
+  <!-- TODO: Create a 1200x630px preview image and update path -->
+  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="ATOM: A Framework of Detecting Query-Based Model Extraction Attacks for Graph Neural Networks - Research Preview">
+  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
+  <meta property="article:author" content="FIRST_AUTHOR_NAME">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="KEYWORD1">
+  <meta property="article:tag" content="KEYWORD2">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: Replace with your lab/institution Twitter handle -->
+  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
+  <!-- TODO: Replace with first author's Twitter handle -->
+  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
+  <!-- TODO: Same as paper title above -->
+  <meta name="twitter:title" content="ATOM: A Framework of Detecting Query-Based Model Extraction Attacks for Graph Neural Networks">
+  <!-- TODO: Same as description above -->
+  <meta name="twitter:description" content="ATOM is a novel real-time model extraction attack detection framework tailored for Graph Neural Networks integrating sequential modeling and reinforcement learning.">
+  <!-- TODO: Same as social preview image above -->
+  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+  <meta name="twitter:image:alt" content="ATOM: A Framework of Detecting Query-Based Model Extraction Attacks for Graph Neural Networks - Research Preview">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="ATOM: A Framework of Detecting Query-Based Model Extraction Attacks for Graph Neural Networks">
+  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
+  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
+  <meta name="citation_publication_date" content="2024">
+  <meta name="citation_conference_title" content="CONFERENCE_NAME">
+  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
+  
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+
+  <!-- TODO: Replace with your paper title and authors -->
+  <title>ATOM: A Framework of Detecting Query-Based Model Extraction Attacks for Graph Neural Networks</title>
+  
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.png">
+  <link rel="apple-touch-icon" href="static/images/favicon.png">
+  
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+  
+  <!-- Structured Data for Academic Papers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "ATOM: A Framework of Detecting Query-Based Model Extraction Attacks for Graph Neural Networks",
+    "description": "ATOM is a novel real-time model extraction attack detection framework tailored for Graph Neural Networks integrating sequential modeling and reinforcement learning.",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "FIRST_AUTHOR_NAME",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "INSTITUTION_NAME"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "SECOND_AUTHOR_NAME",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "INSTITUTION_NAME"
+        }
+      }
+    ],
+    "datePublished": "2024-01-01",
+    "publisher": {
+      "@type": "Organization",
+      "name": "CONFERENCE_OR_JOURNAL_NAME"
+    },
+    "url": "https://github.com/LabRAI/ATOM",
+    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
+    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
+    "abstract": "FULL_ABSTRACT_TEXT_HERE",
+    "citation": "BIBTEX_CITATION_HERE",
+    "isAccessibleForFree": true,
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "mainEntity": {
+      "@type": "WebPage",
+      "@id": "https://github.com/LabRAI/ATOM"
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "RESEARCH_AREA_1"
+      },
+      {
+        "@type": "Thing", 
+        "name": "RESEARCH_AREA_2"
+      }
+    ]
+  }
+  </script>
+  
+  <!-- Website/Organization Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "University of Wisconsin, Madison; Florida State University; Arizona State University",
+    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
+    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.png",
+    "sameAs": [
+      "https://twitter.com/YOUR_TWITTER_HANDLE",
+      "https://github.com/YOUR_GITHUB_USERNAME"
+    ]
+  }
+  </script>
+
+  <!-- Additional Author SEO Data (Hidden) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "name": "Zhan Cheng",
+        "sameAs": [
+          "https://www.linkedin.com/in/zhan-cheng/"
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Yushun Dong",
+        "sameAs": [
+    "https://yushundong.github.io/",
+    "https://labrai.github.io/LangSkills/",
+    "https://github.com/LabRAI/LangSkills",
+    "https://encyclopediaworld.github.io/howaiworks/",
+    "https://github.com/EncyclopediaWorld/howaiworks",
+    "https://encyclopediaworld.github.io/geolive/",
+    "https://github.com/EncyclopediaWorld/geolive",
+    "https://github.com/LabRAI/PyGIP",
+    "https://labrai.github.io/PyGIP/"
+]
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <!-- TODO: Replace with your paper title -->
+            <h1 class="title is-1 publication-title">ATOM: A Framework of Detecting Query-Based Model Extraction Attacks for Graph Neural Networks</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- TODO: Replace with your paper authors and their personal links -->
+              
+              <span class="author-block">Zhan Cheng<sup>1</sup>,</span>
+              <span class="author-block">Bolin Shen<sup>2</sup>,</span>
+              <span class="author-block">Tianming Sha<sup>3</sup>,</span>
+              <span class="author-block">Yuan Gao<sup>1</sup>,</span>
+              <span class="author-block">Shibo Li<sup>2</sup>,</span>
+              <span class="author-block"><a href="https://yushundong.github.io/" target="_blank">Yushun Dong</a><sup>2</sup></span>
+</div>
+
+                  <div class="is-size-5 publication-authors">
+                    <!-- TODO: Replace with your institution and conference/journal info -->
+                    
+                    <span class="author-block"><sup>1</sup>University of Wisconsin, Madison<br><sup>2</sup>Florida State University<br><sup>3</sup>Arizona State University</span>
+                    <br><span class="tag is-primary is-light is-medium" style="margin-top: 15px; font-weight: bold; font-size: 1.25rem; background-color: #f3e8ff; color: #6b21a8; padding: 15px 25px; border-radius: 8px;">KDD 2025</span>
+
+                    <!-- TODO: Remove this line if no equal contribution -->
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- TODO: Update with your arXiv paper ID -->
+                      <span class="link-block">
+                        <a href="https://dl.acm.org/doi/10.1145/3711896.3736848" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                    <!-- TODO: Replace with your GitHub repository URL -->
+                  <span class="link-block">
+                    <a href="https://github.com/LabRAI/ATOM" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- TODO: Update with your arXiv paper ID -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2503.16693" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- TODO: Replace with your teaser video -->
+      
+      <img src="static/images/framework.png" alt="ATOM Framework Architecture" style="width: 100%; border-radius: 10px;" />
+      <h2 class="subtitle has-text-centered" style="margin-top: 20px;">
+        ATOM Framework Architecture: Integrating sequential modeling and reinforcement learning to dynamically detect evolving attack patterns, while leveraging k-core embedding to capture the structural properties.
+      </h2>
+
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified"><p>
+Graph Neural Networks (GNNs) have gained traction in Graph-based Machine Learning as a Service (GMLaaS) platforms, yet they remain vulnerable to graph-based model extraction attacks (MEAs), where adversaries reconstruct surrogate models by querying the victim model. Existing defense mechanisms, such as watermarking and fingerprinting, suffer from poor real-time performance, susceptibility to evasion, or reliance on post-attack verification, making them inadequate for handling the dynamic characteristics of graph-based MEA variants.<br><br>
+To address these limitations, we propose <b>ATOM</b>, a novel real-time MEA detection framework tailored for GNNs. ATOM integrates sequential modeling and reinforcement learning to dynamically detect evolving attack patterns, while leveraging k-core embedding to capture the structural properties, enhancing detection precision. Furthermore, we provide theoretical analysis to characterize query behaviors and optimize detection strategies.<br><br>
+Extensive experiments on multiple real-world datasets demonstrate that ATOM outperforms existing approaches in detection performance, maintaining stability across different time steps, thereby offering a more effective defense mechanism for GMLaaS environments.
+</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel" style="padding: 2rem 0;">
+       
+       <div class="item">
+        <img src="static/images/Performance Comparison.png" alt="Performance Comparison" loading="lazy" style="margin: 0 auto; display: block; max-height: 480px; width: auto; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); padding: 10px; background: white;"/>
+        <h2 class="subtitle has-text-centered">Performance Comparison across datasets.</h2>
+      </div>
+      <div class="item">
+        <img src="static/images/Performance of Representative Models.png" alt="Representative Models" loading="lazy" style="margin: 0 auto; display: block; max-height: 480px; width: auto; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); padding: 10px; background: white;"/>
+        <h2 class="subtitle has-text-centered">Detection performance across different model architectures.</h2>
+      </div>
+      <div class="item">
+        <img src="static/images/F1 scores.png" alt="F1 Scores" loading="lazy" style="margin: 0 auto; display: block; max-height: 480px; width: auto; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); padding: 10px; background: white;"/>
+        <h2 class="subtitle has-text-centered">F1 score comparison across different methods.</h2>
+     </div>
+     <div class="item">
+      <img src="static/images/F1 scores from the ablated model.png" alt="Ablation Study" loading="lazy" style="margin: 0 auto; display: block; max-height: 480px; width: auto; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); padding: 10px; background: white;"/>
+      <h2 class="subtitle has-text-centered">Ablation study validating the contribution of each component.</h2>
+    </div>
+
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Environment Setup & Usage</h2>
+        <div class="content has-text-justified">
+          <p>
+            <b>Hardware Requirements:</b> optimized for multi-GPU training and inference (e.g., AMD EPYC 7443 24-Core, 4x NVIDIA RTX 4090, CUDA 12.4).
+          </p>
+          <pre><code># Install dependencies
+pip install -r requirements.txt</code></pre>
+          <p>
+            <b>Dataset Testing Commands:</b>
+          </p>
+          <pre><code># ATOM (Our Method) on CiteSeer
+python hyperparameter_search.py --tp ppo --dataset CiteSeer</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Detection Performance under Different Query Ratios</h2>
+      <div class="columns is-centered">
+        <div class="column">
+            <img src="static/images/Detection Performance with 25.png" alt="25% Query Ratio" />
+            <p class="has-text-centered">25% Query Ratio</p>
+        </div>
+        <div class="column">
+            <img src="static/images/Detection Performance with 50.png" alt="50% Query Ratio" />
+            <p class="has-text-centered">50% Query Ratio</p>
+        </div>
+        <div class="column">
+            <img src="static/images/Detection Performance with 75.png" alt="75% Query Ratio" />
+            <p class="has-text-centered">75% Query Ratio</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>@article{cheng2024atom,
+  title={ATOM: A Framework of Detecting Query-Based Model Extraction Attacks for Graph Neural Networks},
+  author={Cheng, Zhan and Shen, Bolin and Sha, Tianming and Gao, Yuan and Li, Shibo and Dong, Yushun},
+  journal={arXiv preprint arXiv:2503.16693},
+  year={2024},
+  url={https://arxiv.org/abs/2503.16693}
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
