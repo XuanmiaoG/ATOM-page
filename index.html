@@ -119,31 +119,63 @@
     "author": [
       {
         "@type": "Person",
-        "name": "FIRST_AUTHOR_NAME",
+        "name": "Zhan Cheng",
         "affiliation": {
           "@type": "Organization",
-          "name": "INSTITUTION_NAME"
+          "name": "University of Wisconsin, Madison"
         }
       },
       {
         "@type": "Person",
-        "name": "SECOND_AUTHOR_NAME",
+        "name": "Bolin Shen",
         "affiliation": {
           "@type": "Organization",
-          "name": "INSTITUTION_NAME"
+          "name": "Florida State University"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Tianming Sha",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Arizona State University"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Yuan Gao",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "University of Wisconsin, Madison"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Shibo Li",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Florida State University"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Yushun Dong",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Florida State University"
         }
       }
     ],
-    "datePublished": "2024-01-01",
+    "datePublished": "2025-01-01",
     "publisher": {
       "@type": "Organization",
-      "name": "CONFERENCE_OR_JOURNAL_NAME"
+      "name": "KDD 2025"
     },
     "url": "https://github.com/LabRAI/ATOM",
-    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
-    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
-    "abstract": "FULL_ABSTRACT_TEXT_HERE",
-    "citation": "BIBTEX_CITATION_HERE",
+    "image": "https://github.com/LabRAI/ATOM/raw/main/static/images/framework.png",
+    "keywords": ["Graph Neural Networks", "Model Extraction Attacks", "Reinforcement Learning", "Security", "Machine Learning"],
+    "abstract": "Graph Neural Networks (GNNs) have gained traction in Graph-based Machine Learning as a Service (GMLaaS) platforms, yet they remain vulnerable to graph-based model extraction attacks (MEAs), where adversaries reconstruct surrogate models by querying the victim model. Existing defense mechanisms, such as watermarking and fingerprinting, suffer from poor real-time performance, susceptibility to evasion, or reliance on post-attack verification, making them inadequate for handling the dynamic characteristics of graph-based MEA variants. To address these limitations, we propose ATOM, a novel real-time MEA detection framework tailored for GNNs. ATOM integrates sequential modeling and reinforcement learning to dynamically detect evolving attack patterns, while leveraging k-core embedding to capture the structural properties, enhancing detection precision. Furthermore, we provide theoretical analysis to characterize query behaviors and optimize detection strategies. Extensive experiments on multiple real-world datasets demonstrate that ATOM outperforms existing approaches in detection performance, maintaining stability across different time steps, thereby offering a more effective defense mechanism for GMLaaS environments.",
+    "citation": "Cheng, Z., Shen, B., Sha, T., Gao, Y., Li, S., & Dong, Y. (2025). Atom: A framework of detecting query-based model extraction attacks for graph neural networks. In Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining V. 2 (pp. 322-333).",
     "isAccessibleForFree": true,
     "license": "https://creativecommons.org/licenses/by/4.0/",
     "mainEntity": {
@@ -153,11 +185,11 @@
     "about": [
       {
         "@type": "Thing",
-        "name": "RESEARCH_AREA_1"
+        "name": "Graph Neural Networks"
       },
       {
         "@type": "Thing", 
-        "name": "RESEARCH_AREA_2"
+        "name": "Model Extraction Attacks"
       }
     ]
   }
@@ -192,18 +224,28 @@
       },
       {
         "@type": "Person",
-        "name": "Yushun Dong",
+        "name": "Tianming (Tommy) Sha",
+        "alternateName": "Tianming Sha",
+        "url": "https://shatianming5.github.io/",
         "sameAs": [
-    "https://yushundong.github.io/",
-    "https://labrai.github.io/LangSkills/",
-    "https://github.com/LabRAI/LangSkills",
-    "https://encyclopediaworld.github.io/howaiworks/",
-    "https://github.com/EncyclopediaWorld/howaiworks",
-    "https://encyclopediaworld.github.io/geolive/",
-    "https://github.com/EncyclopediaWorld/geolive",
-    "https://github.com/LabRAI/PyGIP",
-    "https://labrai.github.io/PyGIP/"
-]
+          "https://shatianming5.github.io/"
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Yushun Dong",
+        "url": "https://yushundong.github.io/",
+        "sameAs": [
+          "https://yushundong.github.io/",
+          "https://labrai.github.io/LangSkills/",
+          "https://github.com/LabRAI/LangSkills",
+          "https://encyclopediaworld.github.io/howaiworks/",
+          "https://github.com/EncyclopediaWorld/howaiworks",
+          "https://encyclopediaworld.github.io/geolive/",
+          "https://github.com/EncyclopediaWorld/geolive",
+          "https://github.com/LabRAI/PyGIP",
+          "https://labrai.github.io/PyGIP/"
+        ]
       }
     ]
   }
